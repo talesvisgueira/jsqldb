@@ -1,0 +1,54 @@
+
+
+# ---------------------------------------------------------------------------------------------------------------------------------------
+#                                                   COMANDOSASICOS DO GIT 
+# ---------------------------------------------------------------------------------------------------------------------------------------
+
+# Configura as variaveis globais do usuario do GIT
+git config --global user.name "talesvisgueira"
+git config --global user.email "talesvisgueira@gmail.com"
+git config -l
+
+
+# Cria um diretorio do git clonando do repositorio remoto
+git clone https://github.com/talesvisgueira/jsqldb.git
+
+# Cria um projeto MAVEN com um template simplificado
+mvn archetype:generate -DgroupId=br.com.mtinet -DartifactId=jsqldb -DarchetypeArtifactId=maven-archetype-quickstart -DinteractiveMode=false
+
+# Adiciona todos as pastas e arquivos do diretorio local no repositorio local
+git add .
+# Grava as alteracoes no repositorio local
+git commit -m "Inclusao dos arquivos do MAVEN"
+# Exibe o status do repositorio local 
+git status
+# Exibe o log do repositorio local
+git log
+
+# Define a configucao de acesso (usuario e token) parara o repositorio remoto
+git remote set-url origin https://talesvisgueira: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@github.com/talesvisgueira/jsqldb
+
+# Envia para o reposorio remoto as alteracoes do ramo atual
+git push
+
+# Visualiza o log de forma simplificada
+git log --oneline --decorate --graph --all
+
+#Cria um ramo TESTE e muda para esta ramificacao
+git checkout -b teste
+git add arquivo.txt
+git commit -m "Inclusao novo arquivo"
+
+# Retorna para o ramo MAIN
+git switch main
+
+# Faz um merge da ramificacao teste para o ramo ativo MASTER
+git merge teste
+
+# Deleta a ramicacao TESTE
+git branch -d teste
+
+
+
+
+
